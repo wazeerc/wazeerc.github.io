@@ -1,0 +1,36 @@
+body{
+  background-color: #212121;
+}
+
+.intro{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 3.75vh;
+  text-align: center;
+  margin-top: 7.5vh;
+  color: #e0e0e0;
+  text-transform: uppercase;
+}
+
+.comingsoon{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12.5vh;
+  margin-top: -10vh;
+  text-align: center;
+  text-transform: uppercase;
+  color: #9e9e9e;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2.5px;
+}
+
+.camo{
+  background-image: url('camo.svg');
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  opacity: 15%;
+  width: 100%;
+  height: 40vh;
+  margin-top: -10vh;
+  position: fixed;
+}
