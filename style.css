@@ -5,7 +5,7 @@ body{
 .intro{
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 3.75vh;
+  font-size: 3.75vw;
   text-align: center;
   margin-top: 7.5vh;
   color: #e0e0e0;
@@ -15,7 +15,7 @@ body{
 .comingsoon{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 12.5vh;
+  font-size: 12.5vw;
   margin-top: -10vh;
   text-align: center;
   text-transform: uppercase;
