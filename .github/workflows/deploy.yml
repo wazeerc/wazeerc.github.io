@@ -15,7 +15,27 @@ permissions:
   id-token: write
 
 jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Setup Node.js and PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run Prettier
+        run: pnpm run prettier
+
   build:
+    needs: format
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
