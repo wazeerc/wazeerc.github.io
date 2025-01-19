@@ -1,6 +1,7 @@
 ---
 title: Clean Code. A Myth?
 description: Demystifying Clean Code
+tags: ['Software Development', 'Best Practices']
 pubDate: Oct 10 2024
 heroImage: /clean-code.png
 ---
