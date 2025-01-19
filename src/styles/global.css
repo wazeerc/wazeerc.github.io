@@ -3,8 +3,8 @@ Tailwind Colors used:
   - blue-500: accent
   - blue-700: accent-dark
   - gray-900: bg
-  - slate-200: text-secondary
-  - slate-300: text-primary
+  - slate-200: text-primary
+  - slate-300: text-secondary
   - slate-400: text-tertiary
   - neutral-900: black
   - gray-500: gray
@@ -16,8 +16,8 @@ https: //tailwindcss.com/docs/customizing-colors
   --accent: #3b82f6;
   --accent-dark: #1d4ed8;
   --bg: #111827;
-  --text-primary: #cbd5e1;
-  --text-secondary: #e2e8f0;
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
   --text-tertiary: #94a3b8;
   --black: #171717;
   --gray: #6b7280;
