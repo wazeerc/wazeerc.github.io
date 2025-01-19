@@ -68,7 +68,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.953em;
+  font-size: 1.853em;
 }
 
 h4 {
@@ -124,15 +124,18 @@ img {
 }
 
 code {
-  padding: 2px 4px;
+  padding: 4px;
   color: var(--text-primary);
   background-color: var(--gray-dark);
   border-radius: 8px;
 }
 
 pre {
-  padding: 1.4em;
+  padding: 1.2em;
   border-radius: 8px;
+  font-size: .8em !important;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--gray-dark) !important;
 }
 
 pre>code {
@@ -143,12 +146,19 @@ blockquote {
   border-left: 4px solid var(--accent);
   padding: 0 0 0 20px;
   margin: 0px;
-  font-size: 1.333em;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 hr {
   border: none;
   border-top: 1px solid var(--gray-light);
+}
+
+br {
+  display: block;
+  margin: 2.8em 0;
+  content: '';
 }
 
 @media (max-width: 720px) {
