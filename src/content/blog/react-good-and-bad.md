@@ -1,6 +1,7 @@
 ---
 title: React sucks. Here is why you should learn it.
 description: The Good and Bad Side of React
+tags: ['Software Development', 'React']
 pubDate: Dec 12 2024
 heroImage: /react-crown.png
 ---
