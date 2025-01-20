@@ -12,6 +12,41 @@ Tailwind Colors used:
   - gray-700: gray-dark
 https: //tailwindcss.com/docs/customizing-colors
 */
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/Zodiak-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zodiak';
+  src: url('/fonts/Zodiak-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --accent: #3b82f6;
   --accent-dark: #1d4ed8;
@@ -28,7 +63,7 @@ https: //tailwindcss.com/docs/customizing-colors
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -100,7 +135,7 @@ p,
 ul,
 li {
   color: var(--text-secondary);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Zodiak', serif;
   margin-bottom: 1em;
 }
 
