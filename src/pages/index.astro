@@ -3,9 +3,341 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Image } from "astro:assets";
+
+const techStack = [
+  "TypeScript",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Vue",
+  "TailwindCSS",
+  "Azure",
+  "Git",
+  "GitHub",
+  "Docker",
+  "Figma",
+  "C#",
+  ".NET",
+  "Python",
+];
 ---
 
-<!doctype html>
+<style>
+  .home--heading {
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+    color: var(--text-primary);
+  }
+  .home--sub-heading {
+    font-size: 1.38em;
+    font-weight: 400;
+    margin-bottom: 1em;
+    color: var(--text-secondary);
+  }
+
+  .bento {
+    display: grid;
+    grid-template-columns: 20% 20% 30% 30%;
+    grid-template-rows: auto auto auto;
+    gap: 1em;
+    width: 100%;
+  }
+
+  .bento__heading {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+  }
+
+  .bento__item p {
+    font-family: "Satoshi", sans-serif;
+    font-size: 1.125rem;
+    margin: 0.4rem 0;
+    text-wrap: wrap;
+  }
+
+  .bento__item a {
+    font-size: 1.125rem;
+    text-decoration: unset;
+    color: unset;
+  }
+
+  .bento__item {
+    background-color: var(--bg-bento);
+    border: 2px solid var(--bento-border);
+    border-radius: 16px;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      box-shadow: var(--box-shadow);
+      border: 2px solid var(--text-tertiary);
+    }
+
+    &:not(.bento__item--bio):hover {
+      background-color: color-mix(in srgb, var(--bg-bento) 80%, transparent);
+    }
+  }
+
+  .bento__item--work {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    gap: 0.4rem;
+
+    .work--experience {
+      padding: 0.2em 0.8em;
+
+      p:not(:first-of-type) {
+        font-weight: 500;
+
+        span,
+        a {
+          font-weight: initial;
+        }
+      }
+
+      &:hover {
+        a {
+          text-decoration: underline;
+        }
+      }
+      &:first-of-type {
+        border-radius: 8px;
+        background-color: color-mix(in srgb, var(--bg) 50%, transparent);
+      }
+    }
+  }
+
+  .bento__item--bio {
+    grid-column: 3 / 5;
+    grid-row: 1;
+    border: 2px solid var(--text-tertiary);
+    background-color: var(--text-tertiary);
+    p {
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    img {
+      margin-bottom: 1rem;
+      border-radius: 100%;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        transform: translateY(-2px);
+      }
+    }
+
+    .bento__heading--name {
+      font-family: "Zodiak", serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--bg);
+    }
+  }
+
+  .bento__item--education {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    gap: 0.4rem;
+
+    .education--item {
+      padding: 0.2em 0.8em;
+
+      &:hover {
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      &:first-of-type {
+        border-radius: 8px;
+        background-color: color-mix(in srgb, var(--bg) 50%, transparent);
+      }
+
+      .education--item-primary {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .bento__item--experience {
+    grid-column: 4 / 5;
+    grid-row: 2;
+    text-align: center;
+  }
+
+  .bento__item--specialization {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bento__item--tech {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    overflow: hidden;
+
+    h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .bento__tech-list {
+      display: flex;
+      gap: 0.6rem;
+      animation: scroll 15s linear infinite;
+      will-change: transform;
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    .tech-stack-container {
+      display: flex;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+  }
+
+  .bento__item--projects {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    flex-direction: column;
+
+    .bento__item--project--item:hover {
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    .projects {
+      display: flex;
+      gap: 2em;
+      margin-top: 0.4em;
+      .bento__item--project--item {
+        width: 50%;
+      }
+
+      h4 {
+        font-size: 1.14rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--text-secondary);
+      }
+
+      a {
+        font-size: 1rem;
+        color: var(--text-tertiary);
+      }
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-66.6666%);
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .bento {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 1em;
+    }
+
+    .bento__item--bio {
+      grid-column: 1 / 5;
+      grid-row: 1;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    .bento__item--work {
+      grid-column: 1 / 5;
+      grid-row: 2;
+    }
+
+    .bento__item--education,
+    .bento__item--experience,
+    .bento__item--specialization {
+      grid-column: span 1;
+      grid-row: 3;
+    }
+
+    .bento__item--tech {
+      grid-row: 4;
+    }
+
+    .bento__item--projects {
+      grid-row: 5;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bento {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(7, auto);
+    }
+
+    .bento__item--work,
+    .bento__item--bio,
+    .bento__item--specialization,
+    .bento__item--experience,
+    .bento__item--education,
+    .bento__item--tech,
+    .bento__item--projects {
+      grid-column: 1;
+    }
+
+    .bento__item--bio {
+      grid-row: 1;
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    .bento__item--work {
+      grid-row: 2;
+    }
+    .bento__item--education {
+      grid-row: 3;
+    }
+    .bento__item--experience {
+      grid-row: 4;
+    }
+    .bento__item--specialization {
+      grid-row: 5;
+    }
+
+    .bento__item--tech {
+      grid-row: 6;
+    }
+    .bento__item--projects {
+      grid-row: 7;
+    }
+  }
+</style>
+
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -13,51 +345,123 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <body>
     <Header />
     <main>
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
-      <p>
-        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-        template. This template serves as a lightweight, minimally-styled starting
-        point for anyone looking to build a personal website, blog, or portfolio
-        with Astro.
-      </p>
-      <p>
-        This template comes with a few integrations already configured in your
-        <code>astro.config.mjs</code> file. You can customize your setup with
-        <a href="https://astro.build/integrations">Astro Integrations</a> to add
-        tools like Tailwind, React, or Vue to your project.
-      </p>
-      <p>Here are a few ideas on how to get started with the template:</p>
-      <ul>
-        <li>Edit this page in <code>src/pages/index.astro</code></li>
-        <li>
-          Edit the site header items in <code>src/components/Header.astro</code>
-        </li>
-        <li>
-          Add your name to the footer in <code>src/components/Footer.astro</code
-          >
-        </li>
-        <li>
-          Check out the included blog posts in <code>src/content/blog/</code>
-        </li>
-        <li>
-          Customize the blog post page layout in <code
-            >src/layouts/BlogPost.astro</code
-          >
-        </li>
-      </ul>
-      <p>
-        Have fun! If you get stuck, remember to <a
-          href="https://docs.astro.build/"
-          >read the docs
-        </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask
-        questions.
-      </p>
-      <p>
-        Looking for a blog template with a bit more personality? Check out <a
-          href="https://github.com/Charca/astro-blog-template"
-          >astro-blog-template
-        </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-      </p>
+      <h1 class="home--heading">Hi, I'm Wazeer.</h1>
+      <h2 class="home--sub-heading">Software Engineer, based in Mauritius.</h2>
+      <div class="bento">
+        <div class="bento__item bento__item--work">
+          <h3 class="bento__heading">Work</h3>
+          <div class="work--experience">
+            <p>Mar 2023 - Present</p>
+            <p>
+              Software Developer <span>at</span>
+              <a href="https://www.dayforce.com/" target="_blank">Dayforce</a>
+            </p>
+          </div>
+          <div class="work--experience">
+            <p>Dec 2022 - Feb 2023</p>
+            <p>
+              Application Development Associate <span>at</span>
+              <a href="https://www.accenture.com/" target="_blank">Accenture</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="bento__item bento__item--bio">
+          <Image
+            src="/profilepicture.png"
+            alt="Wazeer's Headshot"
+            width={100}
+            height={100}
+            loading="eager"
+          />
+          <div>
+            <div>
+              <h3 class="bento__heading--name">Wazeer Chadun</h3>
+            </div>
+            <p>
+              I craft intuitive, high-quality software and work seamlessly in
+              collaborative teams while also being autonomous. I'm always
+              learning new skills, tools, and technologies to refine my
+              workflow.
+            </p>
+          </div>
+        </div>
+
+        <div class="bento__item bento__item--education">
+          <h3 class="bento__heading">Education</h3>
+          <div class="education--item">
+            <p class="education--item-primary">MSc Applied Computing</p>
+            <a href="https://www.open.ac.mu/" target="_blank"
+              >Open University of Mauritius</a
+            >
+          </div>
+          <div class="education--item">
+            <p class="education--item-primary">
+              BCom B. Information Technology
+            </p>
+            <a href="https://www.open.ac.mu/" target="_blank"
+              >Curtin University</a
+            >
+          </div>
+        </div>
+
+        <div class="bento__item bento__item--experience">
+          <h3 class="bento__heading">Experience</h3>
+          <p>2+ years Industry</p>
+          <p>6+ years Coding</p>
+        </div>
+
+        <div class="bento__item bento__item--specialization">
+          <p>Front End</p>
+          <p>UI / UX</p>
+          <p>DevOps</p>
+        </div>
+
+        <div class="bento__item bento__item--tech">
+          <h3 class="bento__heading">My Stack</h3>
+          <div class="bento__tech-list">
+            <div class="tech-stack-container">
+              {techStack.map((tech) => <span class="tag">{tech}</span>)}
+            </div>
+            <div class="tech-stack-container">
+              {techStack.map((tech) => <span class="tag">{tech}</span>)}
+            </div>
+            <div class="tech-stack-container">
+              {techStack.map((tech) => <span class="tag">{tech}</span>)}
+            </div>
+          </div>
+        </div>
+
+        <div class="bento__item bento__item--projects">
+          <h3 class="bento__heading">Recent Projects</h3>
+          <div class="projects">
+            <div class="bento__item--project--item">
+              <h4>PrevueMD</h4>
+              <p>
+                A real-time Markdown editor built in Vue 3. This was the first
+                app I built after learning Vue; from ideation, design to
+                development and deployment. I did not like the markdown editor
+                on GitHub, so I decided to built my own.
+              </p>
+              <a href="https://github.com/wazeerc/prevuemd" target="_blank"
+                >Learn more</a
+              >
+            </div>
+            <div class="bento__item--project--item">
+              <h4>fixYtScroll</h4>
+              <p>
+                A Chrome extension that improves the YouTube viewing experience
+                by adding scrollable containers for recommendations and comments
+                sections. I was getting annoyed by the infinite scroll on
+                YouTube, so I decided to fix it myself.
+              </p>
+              <a href="https://github.com/wazeerc/fixYtScroll" target="_blank"
+                >Learn more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <Footer />
   </body>
