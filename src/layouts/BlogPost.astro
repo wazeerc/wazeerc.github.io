@@ -92,5 +92,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       </article>
     </main>
     <Footer />
+    <script>
+      document.querySelectorAll("pre").forEach((pre) => {
+        pre.setAttribute("tabindex", "-1");
+      });
+    </script>
   </body>
 </html>
