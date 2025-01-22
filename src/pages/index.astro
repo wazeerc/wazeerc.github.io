@@ -187,6 +187,7 @@ const techStack = [
     grid-column: 1 / 5;
     grid-row: 3;
     overflow: hidden;
+    position: relative;
 
     h3 {
       margin-bottom: 0.6rem;
@@ -195,8 +196,8 @@ const techStack = [
     .bento__tech-list {
       display: flex;
       gap: 0.6rem;
+      width: max-content;
       animation: scroll 15s linear infinite;
-      will-change: transform;
       &:hover {
         animation-play-state: paused;
       }
@@ -205,7 +206,6 @@ const techStack = [
     .tech-stack-container {
       display: flex;
       gap: 0.6rem;
-      flex-shrink: 0;
     }
   }
 
@@ -247,11 +247,11 @@ const techStack = [
   }
 
   @keyframes scroll {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(-66.6666%);
+    to {
+      transform: translateX(-50%);
     }
   }
 
@@ -426,9 +426,6 @@ const techStack = [
         <div class="bento__item bento__item--tech">
           <h3 class="bento__heading">My Stack</h3>
           <div class="bento__tech-list">
-            <div class="tech-stack-container">
-              {techStack.map((tech) => <span class="tag">{tech}</span>)}
-            </div>
             <div class="tech-stack-container">
               {techStack.map((tech) => <span class="tag">{tech}</span>)}
             </div>
