@@ -3,7 +3,7 @@ title: Clean Code. A Myth?
 description: Demystifying Clean Code
 tags: ['Software Development', 'Best Practices']
 pubDate: Oct 10 2024
-heroImage: /clean-code.png
+heroImage: /thumbnails/clean-code.png
 ---
 
 You might have seen the term "Clean Code" thrown around online. Maybe your favourite LinkedIn influencer wrote a post about it that went viral because, let's face it, anyone who shares their opinions on software development will inevitably spark spirited debates. I've even seen job listings that mention clean code as a requirement.
