@@ -54,7 +54,7 @@ Here's how you can use it:
 /**
  * Calculates tax based on total sales and current tax rate.
  * @param {number} totalSales - The total sales amount.
- * @returns {number} - Tax amount.
+ * @returns {number} Tax amount.
  */
 function calculateTax(totalSales) {
     const taxRate = 0.10;
