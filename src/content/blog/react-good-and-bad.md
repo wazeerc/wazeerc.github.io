@@ -33,9 +33,9 @@ If you don't want to fall into this trap, check out my article on writing [clean
 State management is another pain point. While React’s built-in Context API works fine for smaller components, scaling a project often requires additional libraries like Redux, MobX, or Zustand. This added complexity can be overwhelming, especially for beginners.
 
 ### The New Features
-React keeps introducing new features, which is both exciting and frustrating. Staying up-to-date can feel like a full-time job. Just when you master one feature, another one drops, adding yet another layer of abstraction to learn. React 19 I'm talking to you.
+React keeps introducing new features, which is both exciting and frustrating. Staying up-to-date can feel like a full-time job. Just when you master one feature, another one drops, adding yet another layer of abstraction to learn. React 19, I'm talking to you.
 
-## Why yo should still learn it
+## Why you should still learn it
 ### Beginner-Friendly (Sort of)
 Compared to libraries like Vue.js, React is less opinionated. It feels closer to "vanilla" JavaScript. For instance, React’s map() approach to rendering lists is just JavaScript, while Vue’s v-for is a custom directive. This means that beginners working with React are more likely to pick up JavaScript fundamentals along the way, which is another very important factor. I've seen many devs jumping on the React hype-train without having a decent understanding of the basic concepts of JavaScript or the Web in general.
 
