@@ -1,7 +1,7 @@
 ---
 title: Clean Code. A Myth?
 description: Demystifying Clean Code
-tags: ['Software Development', 'Best Practices']
+tags: ["Software Development", "Best Practices"]
 pubDate: Oct 10 2024
 heroImage: /thumbnails/clean-code.png
 ---
@@ -34,13 +34,13 @@ Instead of:
 
 ```javascript
 // Calculate 10% of Total Sales Amt
-let tax = totalSales * 0.10;
+let tax = totalSales * 0.1;
 ```
 
 Do:
 
 ```javascript
-let taxRate = 0.10; // Adjust this if tax policy changes
+let taxRate = 0.1; // Adjust this if tax policy changes
 let tax = totalSales * taxRate;
 ```
 
@@ -57,8 +57,8 @@ Here's how you can use it:
  * @returns {number} Tax amount.
  */
 function calculateTax(totalSales) {
-    const taxRate = 0.10;
-    return totalSales * taxRate;
+  const taxRate = 0.1;
+  return totalSales * taxRate;
 }
 ```
 
@@ -73,7 +73,9 @@ Great, now you know that making your code readable can often mean getting rid of
 Without whitespace:
 
 ```javascript
-let tax = totalSales * taxRate;let discount = totalSales * discountRate;let total = totalSales - discount + tax;
+let tax = totalSales * taxRate;
+let discount = totalSales * discountRate;
+let total = totalSales - discount + tax;
 ```
 
 With whitespace:
@@ -139,7 +141,7 @@ Instead of:
 ```javascript
 let x = 0.15;
 function calc(t) {
-    return t * x;
+  return t * x;
 }
 ```
 
@@ -148,14 +150,14 @@ Do:
 ```javascript
 let discountRate = 0.15;
 function calculateDiscount(totalSales) {
-    return totalSales * discountRate;
+  return totalSales * discountRate;
 }
 ```
 
 You can also use aliases for functions. I find this particularly useful in React projects.
 
 ```javascript
-import {genRandomData as createRandomUsers} from './utils'
+import { genRandomData as createRandomUsers } from "./utils";
 ```
 
 <br>
@@ -183,20 +185,20 @@ Instead of:
 
 ```typescript
 type Car = {
-    carBrand: Tesla,
-    carType: EV,
-    carColor: White
-}
+  carBrand: Tesla;
+  carType: EV;
+  carColor: White;
+};
 ```
 
 Do:
 
 ```typescript
 type Car = {
-    brand: Tesla,
-    type: EV,
-    color: White
-}
+  brand: Tesla;
+  type: EV;
+  color: White;
+};
 ```
 
 > Good developers write clean code naturally--it's not something you have to overthink. The goal is to make code readable, maintainable, and easy to work with.
@@ -210,7 +212,7 @@ Here are two questions I often see:
 
 Clean Code is a subjective matter. If you're working in a team, your best bet is to develop a set of coding guidelines or standards and refer to that as the clean code. So, is clean code a myth? If it is, those who sold the idea did a great job. But honestly, code should be clean regardless. Programming languages are meant to be human-readable; otherwise, we'd all be writing machine code. At the end of the day, your end-users will never get to see how clean your code is. Don't overthink it. Don't expect your code to be perfect. Code is liability, it might never be perfect. The least you can do is write code that is maintainable and makes collaboration easy.
 
---------------------------------------------------------------------------------
+---
 
 ## References:
 
