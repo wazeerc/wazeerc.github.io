@@ -186,7 +186,7 @@ pre {
   background-color: var(--gray-dark) !important;
 }
 
-pre > code {
+pre>code {
   all: unset;
 }
 
@@ -216,7 +216,6 @@ br {
   border-radius: 12px;
   font-size: 0.9rem;
   white-space: nowrap;
-  cursor: default;
   transition: box-shadow 0.4s ease-in-out;
 
   &:hover {
