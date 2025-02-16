@@ -172,10 +172,11 @@ img {
 }
 
 code {
-  padding: 4px;
+  padding: 4px 6px;
   color: var(--text-primary);
   background-color: var(--gray-dark);
   border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 pre {
