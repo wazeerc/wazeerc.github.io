@@ -134,6 +134,7 @@ b {
 
 a {
   color: var(--accent);
+  transition: color .4s ease;
 }
 
 a:hover {
