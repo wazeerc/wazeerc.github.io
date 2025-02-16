@@ -70,7 +70,8 @@ import HeaderLink from "./HeaderLink.astro";
     color: var(--text-tertiary);
     transition: color 0.4s ease;
 
-    &:hover:not(.active) {
+    &:hover:not(.active),
+    &:focus:not(.active) {
       color: var(--text-secondary);
     }
   }
