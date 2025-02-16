@@ -105,6 +105,9 @@ const techStack = [
         }
       }
 
+      a:focus {
+        text-decoration: underline;
+      }
       &:hover {
         a {
           text-decoration: underline;
@@ -156,6 +159,9 @@ const techStack = [
     .education--item {
       padding: 0.2em 0.8em;
 
+      a:focus {
+        text-decoration: underline;
+      }
       &:hover {
         a {
           text-decoration: underline;
@@ -246,7 +252,8 @@ const techStack = [
         font-size: 1rem;
         color: var(--text-tertiary);
 
-        &:hover {
+        &:hover,
+        &:focus {
           text-decoration: underline;
         }
       }
