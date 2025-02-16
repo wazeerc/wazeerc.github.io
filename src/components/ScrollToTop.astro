@@ -1,0 +1,53 @@
+---
+
+---
+
+<script is:inline>
+  function initScrollToTop() {
+    const scrollButton = document.getElementById("scroll-to-top");
+
+    window.addEventListener("scroll", () => {
+      if (scrollButton) {
+        if (window.scrollY > 1000) {
+          scrollButton.style.display = "block";
+        } else {
+          scrollButton.style.display = "none";
+        }
+      }
+    });
+
+    scrollButton?.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  initScrollToTop();
+  document.addEventListener("astro:page-load", initScrollToTop);
+</script>
+
+<button id="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+  🔝
+</button>
+
+<style>
+  #scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    font-size: 1.4em;
+    opacity: 0.8;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  #scroll-to-top:hover,
+  #scroll-to-top:focus {
+    opacity: 1;
+  }
+</style>
