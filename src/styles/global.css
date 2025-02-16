@@ -92,6 +92,10 @@ main {
   padding: 3em 1em;
 }
 
+.prose {
+  width: 800px !important;
+}
+
 .title {
   text-align: left !important;
 }
