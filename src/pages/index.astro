@@ -217,18 +217,18 @@ const techStack = [
     grid-row: 4;
     flex-direction: column;
 
-    .bento__item--project--item:hover {
-      a {
-        text-decoration: underline;
-      }
-    }
-
     .projects {
       display: flex;
       gap: 2em;
       margin-top: 0.4em;
       .bento__item--project--item {
         width: 50%;
+      }
+
+      .prevuemd-links {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
       }
 
       h4 {
@@ -245,6 +245,10 @@ const techStack = [
       a {
         font-size: 1rem;
         color: var(--text-tertiary);
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -448,7 +452,10 @@ const techStack = [
                 development and deployment. I did not like the markdown editor
                 on GitHub, so I decided to build my own.
               </p>
-              <a href="https://bit.ly/prevuemd" target="_blank">Live Demo</a>
+              <div class="prevuemd-links">
+                <a href="/blog/learning-vue">Learn more</a>
+                <a href="https://bit.ly/prevuemd" target="_blank">Demo</a>
+              </div>
             </div>
             <div class="bento__item--project--item">
               <h4>fixYtScroll</h4>
