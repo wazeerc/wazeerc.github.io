@@ -1,5 +1,5 @@
 ---
-title: I Learned a New JavaScript Framework. Here’s What Happened
+title: I Learned a New JavaScript Framework...
 description: Learning Vue 3, building and deploying an app using it
 tags: ["Software Development", "Vue"]
 pubDate: Feb 16 2025
