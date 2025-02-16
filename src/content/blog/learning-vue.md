@@ -1,5 +1,5 @@
 ---
-title: I Learned a New JavaScript Framework...
+title: I Built an App With a JS Library I Just Learned
 description: Learning Vue 3, building and deploying an app using it
 tags: ["Software Development", "Vue"]
 pubDate: Feb 16 2025
